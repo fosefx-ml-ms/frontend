@@ -1,7 +1,9 @@
-const UPLOAD_URL = 'https://idaf.com/';
+const UPLOAD_URL = 'http://localhost:8080/';
 const ALLOWED_MIMES = ['images/png', 'images/jpeg'];
+
 const submitUploadButton = document.getElementById('submit-upload') as HTMLButtonElement;
 const fileUploadInput = document.getElementById('image-upload') as HTMLInputElement;
+
 submitUploadButton.addEventListener('click', () => {   
     const files = fileUploadInput.files as FileList;
     if (files.length === 0) {
@@ -18,8 +20,14 @@ submitUploadButton.addEventListener('click', () => {
 });
 
 async function sendToServer(image: File) {
-    await fetch(UPLOAD_URL, {
-        // todo
+    const body = new FormData();
+    body.append('image', image);
+    console.dir(body);
+    const resp = await fetch(UPLOAD_URL, {
+        method: 'POST',
+        body
     });
+    const json = await resp.json();
+    alert(json.data.result);    
     // todo add to dom
 }
