@@ -1,0 +1,31 @@
+* {
+    font-family: sans-serif;
+    font-weight: 300;
+    text-align: center;
+}
+h1 , label{
+    font-weight: 400;
+}
+body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+#file-drop-section {
+    width: 80%;
+    height: 20rem;
+    max-width: 50rem;
+    margin: 0 auto;
+    margin-top: 3rem;
+    background: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 2rem;
+    transition: transform 0.2s linear;
+}
+
+#file-drop-section.indrag {
+    transform: scale(0.9);
+}

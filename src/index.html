@@ -4,12 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
     <title>Machine Learning Micro-Services</title>
 </head>
 <body>
+    <h1>Glowstick, Book or Sticknote?</h1>
+    <p>The question humanity needed an answer for is finaly answered!</p>
     <section id="upload-file-section">
+        <label for="image-upload">Select an image:</label>
+        <br><br><br>
         <input type="file" id="image-upload" accept="image/*">
+        <br><br>
         <button id="submit-upload">Submit</button>
     </section>
+
+    <div id="file-drop-section" class="indrag">
+        <label>Or drop it here</label>
+    </div>
 </body>
 </html>
